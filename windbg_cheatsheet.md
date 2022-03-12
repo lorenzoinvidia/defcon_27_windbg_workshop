@@ -121,12 +121,15 @@ C:\> reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Debug Print 
 | :------------------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | Start or resume execution (go)                                 | `g`                        |
 | Dump register(s)                                               | `r`                        | `r` <br> `r eax` <br> `r rax=42`                                                                                                     |
-| Step over                                                      | `p`                        | `pa 0xaddr` (step over until 0xaddr is reached) <br>`pt` (step over until return) <br> `pc` (step over until next call)              |
-| Step into                                                      | `t`                        | Same as above, replace `p` with `t`                                                                                                  |
+| Step over                                                      | `p` / `F10`                | `pa 0xaddr` (step over until 0xaddr is reached) <br>`pt` (step over until return) <br> `pc` (step over until next call)              |
+| Step into                                                      | `t` / `F11`                | Same as above, replace `p` with `t`                                                                                                  |
 | Execute until reaching current frame return address (go upper) | `gu`                       |                                                                                                                                      |
 | List module(s)                                                 | `lm`                       | `lm` (UM: display all modules) <br>`lm` (KM: display all drivers and sections) <br> `lm m *MOD*` (show module with pattern '`MOD`' ) |
 | Get information about current debugging status                 | `.lastevent`<br>`!analyze` |                                                                                                                                      |
 | Show stack call                                                | `k`<br>`kp`                |                                                                                                                                      |
+| Thread status                                                  | `~`| `~*` (show all threads)<br>`~.` (current thread)<br>`~Ns` (switch to thread `N`)<br>`~Nk` (show stack call for thread `N`)   |                                                                                                                                      |
+
+
 
 [Back to top](#Content)
 ### Registers / Memory access
