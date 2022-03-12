@@ -19,6 +19,7 @@
     - [Symbols](#symbols)
     - [Convenience variables and functions](#convenience-variables-and-functions)
     - [Useful extensions](#useful-extensions)
+    - [Local kernel debugging](#local-kernel-debugging)
     - [.NET Debugging](#net-debugging)
   - [LINQ & Debugger Data Model](#linq--debugger-data-model)
     - [Variables](#variables)
@@ -223,6 +224,14 @@ C:\> reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Debug Print 
 | Encode/decode pointer encoded<br>by KernelBase API `EncodePointer()` | `!encodeptr32` (or `64`)<br>`!decodeptr32` (or `64`)                                     |
 | Display the current exception handler                                | `!exchain`                                                                               |                              |
 | Dump UM heap information                                             | `!heap`                                                                                  |                              |
+
+[Back to top](#Content)
+### Local kernel debugging
+
+| Action                                                               | Command                                                                                  | Examples                     |
+| :------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------- |
+| Get information about 1+ process                                     | `!process`| `!process 0 0` (basic info about all processes)<br>`!process ffffdb8f1644f080 2` (more info about \<EPROCESS\> proc)<br>`!process 0 0 smartscreen.exe` (info of procs with the image name)                             |
+| Get mapping information                                              | `!address`                                                                               | `!address -f:MEM_COMMIT`     |
 
 [Back to top](#Content)
 ### .NET Debugging
